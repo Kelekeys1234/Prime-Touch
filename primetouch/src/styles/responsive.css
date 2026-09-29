@@ -1,0 +1,12 @@
+@media(max-width:1000px){
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .hero .wrap{grid-template-columns:1fr}.hero h1{font-size:56px}.scene{min-height:360px}
+ nav{position:absolute;top:92px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:8px 24px 16px;display:none;box-shadow:0 8px 16px rgba(0,0,0,.08)}
+ nav.open{display:flex}nav a{padding:12px 0}.menu{display:block}.nav>.btn{display:none}
+}
+@media(max-width:560px){.cards{grid-template-columns:1fr}.hero h1{font-size:44px}.hero h2{font-size:24px}.logo b{font-size:26px}.eyebrow:before,.eyebrow:after{width:30px}.page h1{font-size:34px}}
+@media(max-width:1000px){
+ .hero .wrap{display:block;min-height:0;padding-top:36px;padding-bottom:16px}
+ .scene{position:relative;width:100%;height:auto;aspect-ratio:737/515}
+ .tag{font-size:26px}
+}
