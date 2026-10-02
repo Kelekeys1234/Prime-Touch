@@ -1,76 +1,86 @@
 import { Link } from 'react-router-dom'
 import QuoteButton from '../components/QuoteButton.jsx'
-import Icon from '../components/Icon.jsx'
-import { services } from '../data/services.js'
-import heroImg from '../assets/hero.jpg'
+import { PHONE, EMAIL } from '../data/site.js'
+import logo from '../assets/logo.jpg'
+import hero from '../assets/hero.jpg'
+import residential from '../assets/card-1.jpg'
+import commercial from '../assets/card-4.jpg'
+import deepClean from '../assets/card-2.jpg'
+import moveOut from '../assets/card-5.jpg'
+import moving from '../assets/card-3.jpg'
+import lawn from '../assets/card-1.jpg'
 
-const badges = [
-  ['shield', 'Trusted', '& Reliable'],
-  ['leaf', 'Eco-Friendly', 'Options'],
-  ['home', 'Residential &', 'Commercial'],
-  ['pin', 'Serving Edmonton', '& Surrounding Areas'],
+const serviceTiles = [
+  { title: <>Residential<br />Cleaning</>, image: residential, symbol: '⌂' },
+  { title: <>Commercial<br />Cleaning</>, image: commercial, symbol: '▦' },
+  { title: <>Deep<br />Cleaning</>, image: deepClean, symbol: '⌕' },
+  { title: <>End of Tenancy<br />Cleaning</>, image: moveOut, symbol: '✧' },
+  { title: <>Move In/Move Out<br />Cleaning</>, image: moving, symbol: '▰' },
+  { title: <>Lawn Care &<br />Snow Removal</>, image: lawn, symbol: '❋' },
 ]
 
-const perks = [
-  ['spark', 'Professional Results', 'A clean space you can be proud of.'],
-  ['clock', 'Flexible Scheduling', 'We work around your needs.'],
-  ['heart', 'Customer Focused', 'Your satisfaction matters.'],
+const promises = [
+  ['♧', <>ECO-FRIENDLY<br />PRODUCTS</>],
+  ['⬡', <>RELIABLE<br />& TRUSTED</>],
+  ['♟', <>PROFESSIONAL<br />& FRIENDLY TEAM</>],
+  ['♥', <>CUSTOMER<br />SATISFACTION</>],
+  ['◇', <>AFFORDABLE<br />RATES</>],
 ]
 
 export default function Home() {
   return (
-    <>
-      <section className="hero">
-        <div className="wrap">
-          <div>
-            <div className="kicker">CLEAN SPACES. FRESH FEEL. PROFESSIONAL TOUCH.</div>
-            <h1>PRIME<i>TOUCH</i></h1>
-            <h2>Professional Cleaning Services<br />You Can Trust</h2>
-            <p>We provide reliable, detailed, and professional cleaning services for homes, offices, rental properties, and more. Let us give your space the PRIMETOUCH it deserves.</p>
-            <QuoteButton>Get a Free Quote →</QuoteButton>
-            <div className="badges">
-              {badges.map(([icon, a, b]) => (
-                <div key={a}><span><Icon name={icon} /></span><div>{a}<br />{b}</div></div>
-              ))}
-            </div>
-          </div>
+    <main className="flyer-home">
+      <section className="flyer-hero">
+        <div className="flyer-copy">
+          <img className="flyer-logo" src={logo} alt="PrimeTouch Cleaning Services" />
+          <div className="flyer-company">CLEANING &amp; HOME SERVICES LTD.</div>
+          <div className="flyer-motto"><span /> CLEANER SPACES · HAPPIER LIVES <span /></div>
+          <h1>A CLEANER<br />BRIGHTER<br />HEALTHIER<br /><em>TOMORROW</em></h1>
+          <p className="flyer-script">Let Us Do<br />the Dirty Work! <b>♡</b></p>
         </div>
-        <div className="scene">
-          <img src={heroImg} alt="Smiling PRIMETOUCH cleaner wiping a kitchen counter" />
-          <div className="tag">A cleaner space<br />makes a happier<br />you!</div>
+        <div className="flyer-room" role="img" aria-label="A clean, bright living room">
+          <img src={hero} alt="" />
+          <div className="flyer-trusted">Your<br />Trusted Local<br />Cleaning Experts<span /></div>
+          <div className="flyer-residential">RESIDENTIAL&nbsp; | &nbsp;COMMERCIAL<br />AND MORE</div>
+          <div className="flyer-note">Good<br />Spaces<br />Brighter<br />Days<br />♡</div>
         </div>
       </section>
 
-      <section className="services">
-        <div className="wrap">
-          <div className="eyebrow">OUR SERVICES</div>
-          <h2>Cleaning Solutions for Every Space</h2>
-          <p>From homes to businesses, we offer a range of professional cleaning services.</p>
-          <div className="cards">
-            {services.map((s) => (
-              <div className="card" key={s.title}>
-                <div className="thumb"><img src={s.photo} alt={s.title} /></div>
-                <img className="ic2" src={s.badge} alt="" />
-                <h3>{s.title}</h3>
-                <p>{s.description}</p>
-                <Link to="/services">Learn More →</Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="strip">
-        <div className="wrap">
-          {perks.map(([icon, title, text]) => (
-            <div className="it" key={title}>
-              <span><Icon name={icon} /></span>
-              <div><b>{title}</b>{text}</div>
-            </div>
+      <section className="flyer-services" aria-label="Our cleaning services">
+        <div className="flyer-tiles">
+          {serviceTiles.map((service, index) => (
+            <Link className="flyer-tile" to="/services" key={index}>
+              <span className="flyer-photo"><img src={service.image} alt="" /></span>
+              <span className="flyer-symbol">{service.symbol}</span>
+              <span className="flyer-tile-title">{service.title}</span>
+            </Link>
           ))}
-          <QuoteButton>Get a Free Quote →</QuoteButton>
         </div>
       </section>
-    </>
+
+      <section className="flyer-promises" aria-label="Why choose PrimeTouch">
+        {promises.map(([symbol, label]) => (
+          <div className="flyer-promise" key={symbol}>
+            <span>{symbol}</span><b>{label}</b>
+          </div>
+        ))}
+      </section>
+
+      <section className="flyer-contact">
+        <QuoteButton className="flyer-quote"><span>☎</span><b>CONTACT US FOR A<br /><strong>FREE QUOTE</strong></b></QuoteButton>
+        <div className="flyer-contact-details">
+          <a href={`tel:${PHONE.replace(/-/g, '')}`}><span>☎</span> (647) 458-0576</a>
+          <a href={`mailto:${EMAIL}`}><span>✉</span> bookprimetouch@gmail.com</a>
+          <div><span>⌖</span> Edmonton &amp; Surrounding Areas</div>
+        </div>
+        <div className="flyer-script flyer-tagline">Clean<br />Care<br />Transform <b>♡</b></div>
+      </section>
+
+      <section className="flyer-bottom">
+        <div><span>⌂</span><b>HOMES<br />CLEANER</b></div>
+        <div><span>♡</span><b>COMMUNITIES<br />BRIGHTER</b></div>
+        <div><span>♧</span><b>LIVES<br />HEALTHIER</b></div>
+      </section>
+    </main>
   )
 }

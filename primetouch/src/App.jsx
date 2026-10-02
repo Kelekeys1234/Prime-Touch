@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import CtaBanner from './components/CtaBanner.jsx'
@@ -11,10 +11,12 @@ import FAQ from './pages/FAQ.jsx'
 import Contact from './pages/Contact.jsx'
 
 export default function App() {
+  const { pathname } = useLocation()
+  const isHome = pathname === '/'
   return (
     <>
       <ScrollToTop />
-      <Header />
+      {!isHome && <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -24,8 +26,8 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Home />} />
       </Routes>
-      <CtaBanner />
-      <Footer />
+      {!isHome && <CtaBanner />}
+      {!isHome && <Footer />}
     </>
   )
 }
