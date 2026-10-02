@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import QuoteButton from '../components/QuoteButton.jsx'
-import Icon from '../components/Icon.jsx'
 import { EMAIL, PHONE } from '../data/site.js'
 import livingRoom from '../assets/flyer-living-room.jpg'
 import residential from '../assets/flyer-residential.jpg'
@@ -33,26 +32,27 @@ export default function Home() {
       <section className="home-hero">
         <div className="home-hero-content">
           <span className="home-eyebrow"><i /> Cleaner spaces · Happier lives</span>
-          <h1>A cleaner, brighter, healthier <em>tomorrow.</em></h1>
-          <p>Professional cleaning and home services for Edmonton homes, workplaces, and rental properties. You enjoy your space; we’ll take care of the dirty work.</p>
+          <h1>A cleaner<br />brighter<br />healthier<br /><em>tomorrow</em></h1>
+          <p>Professional cleaning and home services for homes, workplaces, and rental properties. Enjoy your space while we take care of the dirty work.</p>
           <div className="home-actions">
             <QuoteButton>Contact us for a free quote <span aria-hidden="true">→</span></QuoteButton>
             <Link className="home-secondary-link" to="/services">Explore our services</Link>
           </div>
-          <div className="home-service-area"><Icon name="pin" /> Residential <i /> Commercial <i /> And more</div>
-          <div className="home-hero-script">Let us do<br />the dirty work! <b>♡</b></div>
+          <div className="home-hero-script">Let Us Do<br />the Dirty Work! <b>♡</b></div>
         </div>
         <div className="home-hero-visual">
           <img src={livingRoom} alt="Bright living room with a clean sofa and fresh, welcoming space" />
-          <div className="home-image-note"><span>✦</span><div><b>Your trusted local cleaning experts</b><small>Edmonton &amp; surrounding areas</small></div></div>
+          <div className="home-image-note"><b>Your<br />Trusted Local<br />Cleaning Experts</b><span /></div>
+          <div className="home-image-services">RESIDENTIAL&nbsp; | &nbsp;COMMERCIAL<br />AND MORE</div>
+          <div className="home-image-sign">Good<br />Spaces<br />Brighter<br />Days <b>♡</b></div>
         </div>
       </section>
 
       <section className="home-services-section" aria-labelledby="home-services-title">
         <div className="home-section-heading">
-          <span className="home-eyebrow"><i /> Professional care, right around the corner</span>
-          <h2 id="home-services-title">Cleaning for every space</h2>
-          <p>Reliable help for your home, business, move, and more.</p>
+          <span className="home-eyebrow"><i /> Our Services</span>
+          <h2 id="home-services-title">Cleaning solutions for every space</h2>
+          <p>Professional care for homes, businesses, and everything in between.</p>
         </div>
         <div className="home-service-grid">
           {services.map((service) => (
@@ -71,7 +71,7 @@ export default function Home() {
       </section>
 
       <section className="home-contact-band">
-        <div className="home-contact-message"><span className="home-eyebrow">A little care changes everything</span><h2>Good spaces.<br />Brighter days.</h2><p>Reach out today and let’s make a plan for your space.</p><QuoteButton>Get your free quote <span aria-hidden="true">→</span></QuoteButton></div>
+        <div className="home-contact-message"><span className="home-eyebrow">A little care changes everything</span><h2>Let us do the dirty work.</h2><p>Contact us today for a free, no-obligation quote.</p><QuoteButton>Contact us for a free quote <span aria-hidden="true">→</span></QuoteButton></div>
         <div className="home-contact-details">
           <a href={`tel:${PHONE.replace(/-/g, '')}`}><span>☎</span><b>(647) 458-0576</b></a>
           <a href={`mailto:${EMAIL}`}><span>✉</span><b>{EMAIL}</b></a>
