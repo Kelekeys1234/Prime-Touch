@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import QuoteButton from '../components/QuoteButton.jsx'
 import { EMAIL, PHONE } from '../data/site.js'
 import logo from '../assets/brand-logo.jpg'
-import livingRoom from '../assets/flyer-living-room.jpg'
+import roomPanel from '../assets/flyer-room-panel.jpg'
 import residential from '../assets/flyer-residential.jpg'
 import commercial from '../assets/flyer-commercial.jpg'
 import deep from '../assets/flyer-deep-clean.jpg'
@@ -39,10 +39,7 @@ export default function Home() {
           <p className="flyer-script">Let Us Do<br />the Dirty Work! <b>♡</b></p>
         </div>
         <div className="flyer-room">
-          <img className="flyer-room-photo" src={livingRoom} alt="The bright, clean living room featured in the PrimeTouch flyer" />
-          <div className="flyer-trusted">Your<br />Trusted Local<br />Cleaning Experts<span /></div>
-          <div className="flyer-residential">RESIDENTIAL&nbsp; | &nbsp;COMMERCIAL<br />AND MORE</div>
-          <div className="flyer-note">Good<br />Spaces<br />Brighter<br />Days<br /><b>♡</b></div>
+          <img className="flyer-room-photo" src={roomPanel} alt="Bright living room with the flyer’s Trusted Local Cleaning Experts message and Good Spaces, Brighter Days sign" />
         </div>
       </section>
 
