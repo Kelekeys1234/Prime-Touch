@@ -13,7 +13,7 @@ const serviceAreas = [
 
 export default function Home() {
   return (
-    <main className="flyer-home">
+    <main className="flyer-home" style={{ '--flyer-background': `url("${flyer}")` }}>
       <div className="flyer-poster">
         <img
           className="flyer-poster-image"
