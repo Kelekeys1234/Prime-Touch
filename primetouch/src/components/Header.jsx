@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import QuoteButton from './QuoteButton.jsx'
 import { navLinks } from '../data/site.js'
-import logo from '../assets/logo.jpg'
+import brandMark from '../assets/brand-mark.png'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -10,7 +10,8 @@ export default function Header() {
     <header>
       <div className="wrap nav">
         <Link to="/" className="logo" aria-label="PRIMETOUCH home">
-          <img src={logo} alt="PRIMETOUCH Cleaning Services" style={{ height: 84, display: 'block' }} />
+          <img src={brandMark} alt="" />
+          <span className="logo-lockup"><b>PRIME<i>TOUCH</i></b><small>CLEANING &amp; HOME SERVICES LTD.</small></span>
         </Link>
         <button className="menu" aria-label="Menu" onClick={() => setOpen(!open)}>{open ? '✕' : '☰'}</button>
         <nav className={open ? 'open' : ''} onClick={() => setOpen(false)}>

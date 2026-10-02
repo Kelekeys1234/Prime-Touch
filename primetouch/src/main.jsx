@@ -7,7 +7,7 @@ import './styles/layout.css'
 import './styles/home.css'
 import './styles/pages.css'
 import './styles/responsive.css'
-import './styles/flyer.css'
+import './styles/homepage.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

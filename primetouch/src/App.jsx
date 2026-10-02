@@ -16,7 +16,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
-      {!isHome && <Header />}
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -27,7 +27,7 @@ export default function App() {
         <Route path="*" element={<Home />} />
       </Routes>
       {!isHome && <CtaBanner />}
-      {!isHome && <Footer />}
+      <Footer />
     </>
   )
 }
