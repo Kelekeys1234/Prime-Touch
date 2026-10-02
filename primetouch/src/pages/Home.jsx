@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import QuoteButton from '../components/QuoteButton.jsx'
 import { EMAIL, PHONE } from '../data/site.js'
+import logo from '../assets/brand-logo.jpg'
 import livingRoom from '../assets/flyer-living-room.jpg'
 import residential from '../assets/flyer-residential.jpg'
 import commercial from '../assets/flyer-commercial.jpg'
@@ -8,14 +9,15 @@ import deep from '../assets/flyer-deep-clean.jpg'
 import tenancy from '../assets/flyer-tenancy.jpg'
 import moving from '../assets/flyer-moving.jpg'
 import lawnSnow from '../assets/flyer-lawn-snow.jpg'
+import leaves from '../assets/flyer-leaves.jpg'
 
 const services = [
-  { title: 'Residential Cleaning', image: residential, icon: 'home' },
-  { title: 'Commercial Cleaning', image: commercial, icon: 'building' },
-  { title: 'Deep Cleaning', image: deep, icon: 'spark' },
-  { title: 'End of Tenancy Cleaning', image: tenancy, icon: 'key' },
-  { title: 'Move In / Move Out Cleaning', image: moving, icon: 'truck' },
-  { title: 'Lawn Care & Snow Removal', image: lawnSnow, icon: 'leaf' },
+  { label: 'Residential Cleaning', title: <>Residential<br />Cleaning</>, image: residential, icon: '⌂' },
+  { label: 'Commercial Cleaning', title: <>Commercial<br />Cleaning</>, image: commercial, icon: '▦' },
+  { label: 'Deep Cleaning', title: <>Deep<br />Cleaning</>, image: deep, icon: '⌕' },
+  { label: 'End of Tenancy Cleaning', title: <>End of Tenancy<br />Cleaning</>, image: tenancy, icon: '✧' },
+  { label: 'Move In and Move Out Cleaning', title: <>Move In/Move Out<br />Cleaning</>, image: moving, icon: '▰' },
+  { label: 'Lawn Care and Snow Removal', title: <>Lawn Care &amp;<br />Snow Removal</>, image: lawnSnow, icon: '❋' },
 ]
 
 const promises = [
@@ -28,56 +30,53 @@ const promises = [
 
 export default function Home() {
   return (
-    <main className="home-page">
-      <section className="home-hero">
-        <div className="home-hero-content">
-          <span className="home-eyebrow"><i /> Cleaner spaces · Happier lives</span>
-          <h1>A cleaner<br />brighter<br />healthier<br /><em>tomorrow</em></h1>
-          <p>Professional cleaning and home services for homes, workplaces, and rental properties. Enjoy your space while we take care of the dirty work.</p>
-          <div className="home-actions">
-            <QuoteButton>Contact us for a free quote <span aria-hidden="true">→</span></QuoteButton>
-            <Link className="home-secondary-link" to="/services">Explore our services</Link>
-          </div>
-          <div className="home-hero-script">Let Us Do<br />the Dirty Work! <b>♡</b></div>
+    <main className="flyer-site">
+      <section className="flyer-hero">
+        <div className="flyer-copy">
+          <img className="flyer-logo" src={logo} alt="PrimeTouch Cleaning & Home Services Ltd." />
+          <div className="flyer-motto"><span /> CLEANER SPACES · HAPPIER LIVES <span /></div>
+          <h1>A CLEANER<br />BRIGHTER<br />HEALTHIER<br /><em>TOMORROW</em></h1>
+          <p className="flyer-script">Let Us Do<br />the Dirty Work! <b>♡</b></p>
         </div>
-        <div className="home-hero-visual">
-          <img src={livingRoom} alt="Bright living room with a clean sofa and fresh, welcoming space" />
-          <div className="home-image-note"><b>Your<br />Trusted Local<br />Cleaning Experts</b><span /></div>
-          <div className="home-image-services">RESIDENTIAL&nbsp; | &nbsp;COMMERCIAL<br />AND MORE</div>
-          <div className="home-image-sign">Good<br />Spaces<br />Brighter<br />Days <b>♡</b></div>
+        <div className="flyer-room">
+          <img className="flyer-room-photo" src={livingRoom} alt="The bright, clean living room featured in the PrimeTouch flyer" />
+          <div className="flyer-trusted">Your<br />Trusted Local<br />Cleaning Experts<span /></div>
+          <div className="flyer-residential">RESIDENTIAL&nbsp; | &nbsp;COMMERCIAL<br />AND MORE</div>
+          <div className="flyer-note">Good<br />Spaces<br />Brighter<br />Days<br /><b>♡</b></div>
         </div>
       </section>
 
-      <section className="home-services-section" aria-labelledby="home-services-title">
-        <div className="home-section-heading">
-          <span className="home-eyebrow"><i /> Our Services</span>
-          <h2 id="home-services-title">Cleaning solutions for every space</h2>
-          <p>Professional care for homes, businesses, and everything in between.</p>
-        </div>
-        <div className="home-service-grid">
-          {services.map((service) => (
-            <Link className="home-service-card" to="/services" key={service.title}>
-              <span className="home-service-image"><img src={service.image} alt="" /></span>
-              <span className="home-service-icon" aria-hidden="true">{service.icon === 'home' ? '⌂' : service.icon === 'building' ? '▦' : service.icon === 'spark' ? '✧' : service.icon === 'key' ? '✦' : service.icon === 'truck' ? '▰' : '❋'}</span>
-              <span className="home-service-title">{service.title}</span>
-              <span className="home-service-link">Learn more <b aria-hidden="true">→</b></span>
+      <section className="flyer-services" aria-label="PrimeTouch cleaning services">
+        <div className="flyer-tiles">
+          {services.map((service, index) => (
+            <Link className="flyer-tile" to="/services" key={index} aria-label={`Learn about ${service.label}`}>
+              <span className="flyer-photo"><img src={service.image} alt="" /></span>
+              <span className="flyer-symbol" aria-hidden="true">{service.icon}</span>
+              <span className="flyer-tile-title">{service.title}</span>
             </Link>
           ))}
         </div>
       </section>
 
-      <section className="home-promises" aria-label="Why choose PrimeTouch">
-        {promises.map(([symbol, label]) => <div className="home-promise" key={symbol}><span>{symbol}</span><b>{label}</b></div>)}
+      <section className="flyer-promises" aria-label="Why choose PrimeTouch">
+        {promises.map(([symbol, label]) => <div className="flyer-promise" key={symbol}><span>{symbol}</span><b>{label}</b></div>)}
       </section>
 
-      <section className="home-contact-band">
-        <div className="home-contact-message"><span className="home-eyebrow">A little care changes everything</span><h2>Let us do the dirty work.</h2><p>Contact us today for a free, no-obligation quote.</p><QuoteButton>Contact us for a free quote <span aria-hidden="true">→</span></QuoteButton></div>
-        <div className="home-contact-details">
-          <a href={`tel:${PHONE.replace(/-/g, '')}`}><span>☎</span><b>(647) 458-0576</b></a>
-          <a href={`mailto:${EMAIL}`}><span>✉</span><b>{EMAIL}</b></a>
-          <div><span>⌖</span><b>Edmonton &amp; Surrounding Areas</b></div>
+      <section className="flyer-contact">
+        <img className="flyer-leaves" src={leaves} alt="" />
+        <QuoteButton className="flyer-quote"><span>☎</span><b>CONTACT US FOR A<br /><strong>FREE QUOTE</strong></b></QuoteButton>
+        <div className="flyer-contact-details">
+          <a href={`tel:${PHONE.replace(/-/g, '')}`}><span>☎</span> (647) 458-0576</a>
+          <a href={`mailto:${EMAIL}`}><span>✉</span> {EMAIL}</a>
+          <div><span>⌖</span> Edmonton &amp; Surrounding Areas</div>
         </div>
-        <div className="home-contact-script">Clean<br />Care<br />Transform <b>♡</b></div>
+        <div className="flyer-contact-script">Clean<br />Care<br />Transform <b>♡</b></div>
+      </section>
+
+      <section className="flyer-bottom">
+        <div><span>⌂</span><b>HOMES<br />CLEANER</b></div>
+        <div><span>♡</span><b>COMMUNITIES<br />BRIGHTER</b></div>
+        <div><span>♧</span><b>LIVES<br />HEALTHIER</b></div>
       </section>
     </main>
   )
