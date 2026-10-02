@@ -1,27 +1,30 @@
 import { Link } from 'react-router-dom'
 import QuoteButton from '../components/QuoteButton.jsx'
+import Icon from '../components/Icon.jsx'
 import { EMAIL, PHONE } from '../data/site.js'
-import residential from '../assets/card-1.jpg'
-import deepCleaning from '../assets/card-2.jpg'
-import moving from '../assets/card-3.jpg'
-import commercial from '../assets/card-4.jpg'
-import tenancy from '../assets/card-5.jpg'
-import hero from '../assets/hero.jpg'
+import livingRoom from '../assets/flyer-living-room.jpg'
+import residential from '../assets/flyer-residential.jpg'
+import commercial from '../assets/flyer-commercial.jpg'
+import deep from '../assets/flyer-deep-clean.jpg'
+import tenancy from '../assets/flyer-tenancy.jpg'
+import moving from '../assets/flyer-moving.jpg'
+import lawnSnow from '../assets/flyer-lawn-snow.jpg'
 
 const services = [
-  { title: 'Residential Cleaning', description: 'Enjoy a fresher, more comfortable home, cleaned with care.', image: residential, icon: '⌂' },
-  { title: 'Commercial Cleaning', description: 'A clean, welcoming workplace for your team and your customers.', image: commercial, icon: '▦' },
-  { title: 'Deep Cleaning', description: 'Detailed attention for the places and surfaces that need more.', image: deepCleaning, icon: '✧' },
-  { title: 'End of Tenancy', description: 'Leave your rental clean and ready for its next chapter.', image: tenancy, icon: '⌑' },
-  { title: 'Move In / Move Out', description: 'Settle into a fresh start, or leave your old place spotless.', image: moving, icon: '▰' },
-  { title: 'Lawn Care & Snow Removal', description: 'Seasonal help to keep your property tidy and accessible.', image: residential, icon: '❋' },
+  { title: 'Residential Cleaning', image: residential, icon: 'home' },
+  { title: 'Commercial Cleaning', image: commercial, icon: 'building' },
+  { title: 'Deep Cleaning', image: deep, icon: 'spark' },
+  { title: 'End of Tenancy Cleaning', image: tenancy, icon: 'key' },
+  { title: 'Move In / Move Out Cleaning', image: moving, icon: 'truck' },
+  { title: 'Lawn Care & Snow Removal', image: lawnSnow, icon: 'leaf' },
 ]
 
-const values = [
-  ['♧', 'Eco-friendly products'],
-  ['⬡', 'Reliable & trusted'],
-  ['♟', 'Friendly professionals'],
-  ['♥', 'Customer satisfaction'],
+const promises = [
+  ['♧', <>ECO-FRIENDLY<br />PRODUCTS</>],
+  ['⬡', <>RELIABLE<br />&amp; TRUSTED</>],
+  ['♟', <>PROFESSIONAL<br />&amp; FRIENDLY TEAM</>],
+  ['♥', <>CUSTOMER<br />SATISFACTION</>],
+  ['◇', <>AFFORDABLE<br />RATES</>],
 ]
 
 export default function Home() {
@@ -29,53 +32,53 @@ export default function Home() {
     <main className="home-page">
       <section className="home-hero">
         <div className="home-hero-content">
-          <span className="home-eyebrow"><i /> Edmonton’s trusted local cleaning team</span>
-          <h1>A cleaner, brighter, <em>healthier tomorrow.</em></h1>
-          <p>Professional cleaning for homes, offices, and rental properties. Tell us what you need and we’ll make your space feel good again.</p>
+          <span className="home-eyebrow"><i /> Cleaner spaces · Happier lives</span>
+          <h1>A cleaner, brighter, healthier <em>tomorrow.</em></h1>
+          <p>Professional cleaning and home services for Edmonton homes, workplaces, and rental properties. You enjoy your space; we’ll take care of the dirty work.</p>
           <div className="home-actions">
-            <QuoteButton>Get a Free Quote <span aria-hidden="true">→</span></QuoteButton>
+            <QuoteButton>Contact us for a free quote <span aria-hidden="true">→</span></QuoteButton>
             <Link className="home-secondary-link" to="/services">Explore our services</Link>
           </div>
-          <div className="home-service-area"><span aria-hidden="true">⌖</span> Serving Edmonton &amp; surrounding areas</div>
+          <div className="home-service-area"><Icon name="pin" /> Residential <i /> Commercial <i /> And more</div>
+          <div className="home-hero-script">Let us do<br />the dirty work! <b>♡</b></div>
         </div>
         <div className="home-hero-visual">
-          <img src={hero} alt="A professional cleaner caring for a bright, modern home" />
-          <div className="home-image-note"><span>✦</span><div><b>Your trusted local experts</b><small>Residential · Commercial · More</small></div></div>
-          <div className="home-photo-caption">A clean space feels like a fresh start.</div>
+          <img src={livingRoom} alt="Bright living room with a clean sofa and fresh, welcoming space" />
+          <div className="home-image-note"><span>✦</span><div><b>Your trusted local cleaning experts</b><small>Edmonton &amp; surrounding areas</small></div></div>
         </div>
       </section>
 
-      <section className="home-values" aria-label="The PrimeTouch difference">
-        {values.map(([icon, label]) => <div className="home-value" key={label}><span>{icon}</span><b>{label}</b></div>)}
-      </section>
-
-      <section className="home-services-section">
+      <section className="home-services-section" aria-labelledby="home-services-title">
         <div className="home-section-heading">
-          <span className="home-eyebrow"><i /> Thoughtful care for every space</span>
-          <h2>Cleaning that fits your life</h2>
-          <p>From regular home care to a full move-out clean, we’re ready to help.</p>
+          <span className="home-eyebrow"><i /> Professional care, right around the corner</span>
+          <h2 id="home-services-title">Cleaning for every space</h2>
+          <p>Reliable help for your home, business, move, and more.</p>
         </div>
         <div className="home-service-grid">
           {services.map((service) => (
             <Link className="home-service-card" to="/services" key={service.title}>
-              <div className="home-service-image"><img src={service.image} alt="" /><span>{service.icon}</span></div>
-              <div className="home-service-card-copy"><h3>{service.title}</h3><p>{service.description}</p><b>View service <span aria-hidden="true">→</span></b></div>
+              <span className="home-service-image"><img src={service.image} alt="" /></span>
+              <span className="home-service-icon" aria-hidden="true">{service.icon === 'home' ? '⌂' : service.icon === 'building' ? '▦' : service.icon === 'spark' ? '✧' : service.icon === 'key' ? '✦' : service.icon === 'truck' ? '▰' : '❋'}</span>
+              <span className="home-service-title">{service.title}</span>
+              <span className="home-service-link">Learn more <b aria-hidden="true">→</b></span>
             </Link>
           ))}
         </div>
       </section>
 
-      <section className="home-approach">
-        <div className="home-approach-mark"><span>✦</span><b>PRIME<br />TOUCH</b><small>CLEANER SPACES<br />HAPPIER LIVES</small></div>
-        <div className="home-approach-copy"><span className="home-eyebrow">A little more care goes a long way</span><h2>Good spaces make room for better days.</h2><p>We bring a reliable team, thoughtful attention to detail, and a personal touch to every visit. Let us take cleaning off your list.</p><Link to="/about" className="home-text-link">Get to know us <span aria-hidden="true">→</span></Link></div>
-        <div className="home-approach-points"><div><b>01</b><span>Tell us about<br />your space</span></div><div><b>02</b><span>Choose a time<br />that works</span></div><div><b>03</b><span>Come home to<br />a fresh start</span></div></div>
+      <section className="home-promises" aria-label="Why choose PrimeTouch">
+        {promises.map(([symbol, label]) => <div className="home-promise" key={symbol}><span>{symbol}</span><b>{label}</b></div>)}
       </section>
 
       <section className="home-contact-band">
-        <div><span className="home-eyebrow">Ready for a little breathing room?</span><h2>Let us do the dirty work.</h2><p>Get in touch for a free, no-obligation quote.</p></div>
-        <div className="home-contact-actions"><QuoteButton>Request a Free Quote <span aria-hidden="true">→</span></QuoteButton><a href={`tel:${PHONE.replace(/-/g, '')}`}>Call {PHONE}</a></div>
+        <div className="home-contact-message"><span className="home-eyebrow">A little care changes everything</span><h2>Good spaces.<br />Brighter days.</h2><p>Reach out today and let’s make a plan for your space.</p><QuoteButton>Get your free quote <span aria-hidden="true">→</span></QuoteButton></div>
+        <div className="home-contact-details">
+          <a href={`tel:${PHONE.replace(/-/g, '')}`}><span>☎</span><b>(647) 458-0576</b></a>
+          <a href={`mailto:${EMAIL}`}><span>✉</span><b>{EMAIL}</b></a>
+          <div><span>⌖</span><b>Edmonton &amp; Surrounding Areas</b></div>
+        </div>
+        <div className="home-contact-script">Clean<br />Care<br />Transform <b>♡</b></div>
       </section>
-      <div className="home-contact-details"><a href={`mailto:${EMAIL}`}>{EMAIL}</a><span>Edmonton, Alberta &amp; surrounding communities</span></div>
     </main>
   )
 }
