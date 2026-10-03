@@ -16,7 +16,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
-      {pathname !== '/' && <Header />}
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
