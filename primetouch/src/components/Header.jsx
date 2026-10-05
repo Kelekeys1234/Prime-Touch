@@ -23,7 +23,7 @@ export default function Header() {
         <button className="menu" type="button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="site-navigation" onClick={() => setOpen((value) => !value)}>{open ? '\u00D7' : '\u2630'}</button>
         <nav id="site-navigation" className={open ? 'open' : ''}>
           {navLinks.map((l) => (
-            <NavLink key={l.to} to={l.to} end className={({ isActive }) => (isActive ? 'on' : '')}>
+            <NavLink key={l.to} to={l.to} end reloadDocument className={({ isActive }) => (isActive ? 'on' : '')}>
               {l.label}{l.label === 'Services' ? ' \u2304' : ''}
             </NavLink>
           ))}
