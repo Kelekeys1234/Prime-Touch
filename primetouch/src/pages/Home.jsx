@@ -49,7 +49,7 @@ export default function Home() {
       <section className="flyer-services" aria-label="PrimeTouch cleaning services">
         <div className="flyer-tiles">
           {services.map((service, index) => (
-            <Link className="flyer-tile" to="/services" key={index} aria-label={`Learn about ${service.label}`}>
+            <Link className="flyer-tile" to="/services" reloadDocument key={index} aria-label={`Learn about ${service.label}`}>
               <span className="flyer-photo"><img src={service.image} alt="" /></span>
               <span className="flyer-symbol" aria-hidden="true">{service.icon}</span>
               <span className="flyer-tile-title">{service.title}</span>
