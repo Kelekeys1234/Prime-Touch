@@ -10,7 +10,10 @@ export default function Footer() {
       </div>
       <div className="wrap">
         <div>© {new Date().getFullYear()} PRIMETOUCH Cleaning &amp; Home Services Ltd. · Edmonton, AB</div>
-        <div><a href={`tel:${PHONE.replace(/-/g, '')}`}>{PHONE}</a> · <a href={`mailto:${EMAIL}`}>{EMAIL}</a></div>
+        <div className="footer-contact">
+          <a href={`tel:${PHONE.replace(/-/g, '')}`}>{PHONE}</a>
+          <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+        </div>
       </div>
     </footer>
   )
