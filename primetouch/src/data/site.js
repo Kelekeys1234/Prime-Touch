@@ -1,5 +1,5 @@
 export const QUOTE_URL =
-  '/quote-qr.jpeg'
+  'https://docs.google.com/forms/d/e/1FAIpQLScAWXN-0vXsFE8INXOYAQZUU-JBbXl31uZCd6-MqMfTg7uWkg/viewform'
 export const PHONE = '647-458-0576'
 export const EMAIL = 'bookprimetouch@gmail.com'
 
