@@ -17,7 +17,7 @@ export default function About() {
         <p className="lead">At PRIMETOUCH Cleaning & Home Services Ltd., we believe a clean space is more than just a clean space—it creates comfort, peace of mind, and a better everyday experience. We provide professional cleaning and home services for residential properties, businesses, rental properties, and property owners throughout Edmonton and surrounding areas.</p>
         <p className="lead">Our approach is built around reliability, attention to detail, professionalism, and customer care. Whether you need a one-time deep clean or ongoing cleaning support, we work to provide a service that fits your needs.</p>
         <div className="grid">
-          <div className="box"><h3>Our Mission</h3><p>To make homes, workplaces, and properties cleaner, healthier, and more welcoming through dependable and professional service.</p></div>
+          <div className="box"><h3>🚀 Our Mission</h3><p>To make homes, workplaces, and properties cleaner, healthier, and more welcoming through dependable and professional service.</p></div>
           {values.map(([icon, title, text]) => (
             <div className="box" key={title}><h3>{icon} {title}</h3><p>{text}</p></div>
           ))}
