@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import QuoteButton from './QuoteButton.jsx'
 import { EMAIL, PHONE, navLinks } from '../data/site.js'
-import logo from '../assets/brand-logo.jpg'
+import logo from '../assets/brand-logo.png'
 
 export default function Header() {
   const [open, setOpen] = useState(false)

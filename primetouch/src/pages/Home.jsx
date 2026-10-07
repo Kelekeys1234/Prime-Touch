@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import QuoteButton from '../components/QuoteButton.jsx'
 import { EMAIL, PHONE } from '../data/site.js'
-import logo from '../assets/brand-logo.jpg'
+import logo from '../assets/brand-logo.png'
 import livingRoom from '../assets/flyer-living-room.jpg'
 import residential from '../assets/flyer-residential.jpg'
 import commercial from '../assets/flyer-commercial.jpg'
