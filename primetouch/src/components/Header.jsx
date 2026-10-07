@@ -24,7 +24,7 @@ export default function Header() {
         <nav id="site-navigation" className={open ? 'open' : ''}>
           {navLinks.map((l) => (
             <NavLink key={l.to} to={l.to} end reloadDocument className={({ isActive }) => (isActive ? 'on' : '')}>
-              {l.label}{l.label === 'Services' ? ' \u2304' : ''}
+              {l.label}
             </NavLink>
           ))}
         </nav>
