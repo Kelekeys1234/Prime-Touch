@@ -17,7 +17,7 @@ const base = [
  {icon:"✨",title:"Deep Cleaning",description:"Get the extra attention your space needs with our thorough deep cleaning service.",items:["Kitchens","Bathrooms","Baseboards","Doors and handles","Hard-to-reach areas","Floors","Surfaces","High-touch areas"]},
  {icon:"📦",title:"Moving Services",description:"Moving support for tenants, homeowners, landlords and property managers, with cleaning options to help make the transition easier.",items:["End-of-tenancy cleaning for tenants, landlords and property managers","Move-in and move-out cleaning","Moving assistance tailored to your needs"]},
  {icon:"🏢",title:"Commercial Cleaning",description:"Create a cleaner, healthier workplace for your employees, customers and visitors.",items:["Office cleaning","Washroom cleaning","Common-area cleaning","Floor cleaning","Dusting","Surface cleaning","High-touch area cleaning","Garbage removal"]},
- {icon:"🅰",title:"Airbnb & Short-Term Rental Cleaning",description:"Keep your property guest-ready with our reliable turnover cleaning services.",items:["Turnover cleaning","Kitchen cleaning","Bathroom cleaning","Bedroom preparation","Floor cleaning","Surface cleaning","General property preparation"]}
+ {icon:"🅰️",title:"Airbnb & Short-Term Rental Cleaning",description:"Keep your property guest-ready with our reliable turnover cleaning services.",items:["Turnover cleaning","Kitchen cleaning","Bathroom cleaning","Bedroom preparation","Floor cleaning","Surface cleaning","General property preparation"]}
 ]
 
 export const services = base.map((s, i) => ({ ...s, photo: cardPhotos[i], badge: badges[i] }))
