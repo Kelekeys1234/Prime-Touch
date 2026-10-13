@@ -1,5 +1,6 @@
 import QuoteButton from '../components/QuoteButton.jsx'
 import { faqs } from '../data/faqs.js'
+import { EMAIL, EMAIL_LABEL, PHONE, PHONE_LABEL } from '../data/site.js'
 
 export default function FAQ() {
   return (
@@ -11,6 +12,13 @@ export default function FAQ() {
           <details key={question}>
             <summary>{question}</summary>
             <p>{answer}</p>
+            {question === 'How do I request a quote?' && (
+              <div className="faq-contact-actions">
+                <QuoteButton>Get a Free Quote</QuoteButton>
+                <a href={`tel:${PHONE.replace(/-/g, '')}`}>{PHONE_LABEL}</a>
+                <a href={`mailto:${EMAIL}`}>{EMAIL_LABEL}</a>
+              </div>
+            )}
           </details>
         ))}
         <details>
