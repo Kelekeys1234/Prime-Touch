@@ -16,7 +16,7 @@ const services = [
   { label: 'Commercial Cleaning', title: <>Commercial<br />Cleaning</>, image: commercial, icon: '▦' },
   { label: 'Deep Cleaning', title: <>Deep<br />Cleaning</>, image: deep, icon: '⌕' },
   { label: 'End of Tenancy Cleaning', title: <>End of Tenancy<br />Cleaning</>, image: tenancy, icon: '✧' },
-  { label: 'Move In and Move Out Cleaning', title: <>Move In/Move Out<br />Cleaning</>, image: moving, icon: '▰' },
+  { label: 'Moving Services', title: <>Moving<br />Services</>, image: moving, icon: '▰' },
   { label: 'Lawn Care and Snow Removal', title: <>Lawn Care &amp;<br />Snow Removal</>, image: lawnSnow, icon: '❋' },
 ]
 
@@ -73,11 +73,6 @@ export default function Home() {
         <div className="flyer-contact-script">Clean<br />Care<br />Transform <b>♡</b></div>
       </section>
 
-      <section className="flyer-bottom">
-        <div><span>⌂</span><b>HOMES<br />CLEANER</b></div>
-        <div><span>♡</span><b>COMMUNITIES<br />BRIGHTER</b></div>
-        <div><span>♧</span><b>LIVES<br />HEALTHIER</b></div>
-      </section>
     </main>
   )
 }
