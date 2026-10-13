@@ -12,8 +12,8 @@ details{background:var(--sky);border-radius:10px;padding:16px 20px;margin-bottom
 summary{font-weight:600;color:var(--navy);cursor:pointer}
 details p{margin:10px 0 0;line-height:1.6}
 .faq-contact-actions{display:flex;align-items:center;gap:12px 18px;flex-wrap:wrap;margin-top:18px}
-.faq-contact-actions>a:not(.btn){color:var(--navy);font-weight:600;text-decoration:underline;text-decoration-color:var(--blue);text-underline-offset:3px;overflow-wrap:anywhere}
-.faq-contact-actions>a:not(.btn):hover{color:#9b7623}
+.faq-contact-actions>a:not(.btn){color:var(--navy);font-weight:600;text-decoration:none;overflow-wrap:anywhere}
+.faq-contact-actions>a:not(.btn):hover{color:#9b7623;text-decoration:none}
 .service-accordion{max-width:860px;margin-top:28px}
 .service-subcategories{margin-top:14px}
 .service-subcategories details{background:rgba(255,255,255,.62);border:1px solid rgba(7,59,44,.12)}
