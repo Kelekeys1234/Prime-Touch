@@ -27,7 +27,7 @@ export default function App() {
         <Route path="*" element={<Home />} />
       </Routes>
       {!isHome && <CtaBanner />}
-      {!isHome && <Footer />}
+      <Footer />
     </>
   )
 }
