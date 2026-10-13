@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import QuoteButton from './QuoteButton.jsx'
-import { EMAIL, PHONE, navLinks } from '../data/site.js'
+import { EMAIL, EMAIL_LABEL, PHONE, PHONE_LABEL, navLinks } from '../data/site.js'
 import logo from '../assets/brand-logo.png'
 
 export default function Header() {
@@ -13,8 +13,8 @@ export default function Header() {
   return (
     <header>
       <div className="header-contact">
-        <a href={`tel:${PHONE.replace(/-/g, '')}`}>{PHONE}</a>
-        <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+        <a href={`tel:${PHONE.replace(/-/g, '')}`}>{PHONE_LABEL}</a>
+        <a href={`mailto:${EMAIL}`}>{EMAIL_LABEL}</a>
       </div>
       <div className="wrap nav">
         <Link to="/" className="logo" aria-label="PRIMETOUCH home">

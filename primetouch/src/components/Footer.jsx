@@ -1,4 +1,4 @@
-import { PHONE, EMAIL, SOCIAL_LINKS } from '../data/site.js'
+import { PHONE, PHONE_LABEL, EMAIL, EMAIL_LABEL, SOCIAL_LINKS } from '../data/site.js'
 
 const socialPlatforms = [
   { name: 'Facebook', key: 'facebook', path: 'M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V10H7.8v3h2.6v8z' },
@@ -24,8 +24,8 @@ export default function Footer() {
       <div className="wrap">
         <div>© {new Date().getFullYear()} PRIMETOUCH Cleaning &amp; Home Services Ltd. · Edmonton, AB</div>
         <div className="footer-contact">
-          <a href={`tel:${PHONE.replace(/-/g, '')}`}>{PHONE}</a>
-          <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          <a href={`tel:${PHONE.replace(/-/g, '')}`}>{PHONE_LABEL}</a>
+          <a href={`mailto:${EMAIL}`}>{EMAIL_LABEL}</a>
         </div>
         <div className="footer-socials" aria-label="Social media">
           {socialPlatforms.map(({ name, key, path }) => (

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import QuoteButton from '../components/QuoteButton.jsx'
-import { EMAIL, PHONE } from '../data/site.js'
+import { EMAIL, EMAIL_LABEL, PHONE, PHONE_LABEL } from '../data/site.js'
 import logo from '../assets/brand-logo.png'
 import livingRoom from '../assets/flyer-living-room.jpg'
 import residential from '../assets/flyer-residential.jpg'
@@ -66,8 +66,8 @@ export default function Home() {
         <img className="flyer-leaves" src={leaves} alt="" />
         <QuoteButton className="flyer-quote"><span>☎</span><b>CONTACT US FOR A<br /><strong>FREE QUOTE</strong></b></QuoteButton>
         <div className="flyer-contact-details">
-          <a href={`tel:${PHONE.replace(/-/g, '')}`}><span>☎</span> (647) 458-0576</a>
-          <a href={`mailto:${EMAIL}`}><span>✉</span> {EMAIL}</a>
+          <a href={`tel:${PHONE.replace(/-/g, '')}`}><span>☎</span> {PHONE_LABEL}</a>
+          <a href={`mailto:${EMAIL}`}><span>✉</span> {EMAIL_LABEL}</a>
           <div><span>⌖</span> Edmonton &amp; Surrounding Areas</div>
         </div>
         <div className="flyer-contact-script">Clean<br />Care<br />Transform <b>♡</b></div>

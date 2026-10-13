@@ -13,6 +13,16 @@ export default function FAQ() {
             <p>{answer}</p>
           </details>
         ))}
+        <details>
+          <summary>Areas We Serve</summary>
+          <p>Areas We Serve – Edmonton and Surrounding Communities</p>
+          <p>We proudly serve Edmonton and the surrounding communities, including:</p>
+          <ul>
+            <li>West Edmonton</li><li>Downtown Edmonton</li><li>South Edmonton</li><li>North Edmonton</li>
+            <li>Southwest Edmonton</li><li>Northwest Edmonton</li><li>St. Albert</li><li>Sherwood Park</li>
+            <li>Beaumont</li><li>Leduc</li><li>Spruce Grove</li><li>Stony Plain</li>
+          </ul>
+        </details>
         <br />
         <QuoteButton>Get a Free Quote</QuoteButton>
       </div>
