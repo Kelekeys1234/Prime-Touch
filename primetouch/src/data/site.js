@@ -6,7 +6,8 @@ export const PHONE_LABEL = `Call or Text Us: ${PHONE}`
 export const EMAIL_LABEL = `Email: ${EMAIL}`
 export const SOCIAL_LINKS = {
   facebook: 'https://www.facebook.com/share/1CX9kQwj9g/?mibextid=wwXIfr',
-  instagram: '',
+  instagram: 'https://www.instagram.com/primetouch_cleaning_yyc/',
+  tiktok: 'https://www.tiktok.com/@primetouch_cleaningyeg',
   x: '',
 }
 
