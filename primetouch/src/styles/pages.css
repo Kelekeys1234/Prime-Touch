@@ -11,6 +11,8 @@
 details{background:var(--sky);border-radius:10px;padding:16px 20px;margin-bottom:12px}
 summary{font-weight:600;color:var(--navy);cursor:pointer}
 details p{margin:10px 0 0;line-height:1.6}
+details.faq-cleaning-options>div>h3{margin:18px 0 8px}
+details.faq-cleaning-options .btn{margin-top:18px}
 .faq-contact-actions{display:flex;align-items:center;gap:12px 18px;flex-wrap:wrap;margin-top:18px}
 .faq-contact-actions>a:not(.btn){color:var(--navy);font-weight:600;text-decoration:none;overflow-wrap:anywhere}
 .faq-contact-actions>a:not(.btn):hover{color:#9b7623;text-decoration:none}

@@ -9,7 +9,7 @@ export default function FAQ() {
         <h1>Frequently Asked Questions</h1>
         <br />
         {faqs.map(([question, answer]) => (
-          <details key={question}>
+          <details key={question} className={question === 'Do I need to provide cleaning supplies?' ? 'faq-cleaning-options' : undefined}>
             <summary>{question}</summary>
             {question === 'Do I need to provide cleaning supplies?' ? (
               <div>
