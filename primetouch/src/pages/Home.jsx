@@ -33,6 +33,8 @@ export default function Home() {
         <img
           className="flyer-hero-banner"
           src="/primetouch-hero-banner.jpg"
+          width="1024"
+          height="789"
           alt="PrimeTouch cleaning team at work in a bright home"
         />
       </section>
