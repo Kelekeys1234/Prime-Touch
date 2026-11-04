@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import QuoteButton from '../components/QuoteButton.jsx'
 import { EMAIL, EMAIL_LABEL, PHONE, PHONE_LABEL } from '../data/site.js'
+import logo from '../assets/brand-logo.png'
+import livingRoom from '../assets/flyer-living-room.jpg'
 import residential from '../assets/flyer-residential.jpg'
 import commercial from '../assets/flyer-commercial.jpg'
 import deep from '../assets/flyer-deep-clean.jpg'
@@ -30,13 +32,18 @@ export default function Home() {
   return (
     <main className="flyer-site">
       <section className="flyer-hero">
-        <img
-          className="flyer-hero-banner"
-          src="/primetouch-hero-banner.jpg"
-          width="1024"
-          height="789"
-          alt="PrimeTouch cleaning team at work in a bright home"
-        />
+        <div className="flyer-copy">
+          <img className="flyer-logo" src={logo} alt="PrimeTouch Cleaning & Home Services Ltd." />
+          <div className="flyer-motto"><span /> CLEANER SPACES · HAPPIER LIVES <span /></div>
+          <h1>A CLEANER<br />BRIGHTER<br />HEALTHIER<br /><em>TOMORROW</em></h1>
+          <p className="flyer-script">Let Us Do<br />the Dirty Work! <b>♡</b></p>
+        </div>
+        <div className="flyer-room">
+          <img className="flyer-room-photo" src={livingRoom} alt="Bright living room with a clean sofa and fresh flowers" />
+          <div className="flyer-trusted">Your<br />Trusted Local<br />Cleaning Experts<span /></div>
+          <div className="flyer-residential">RESIDENTIAL&nbsp; | &nbsp;COMMERCIAL<br />AND MORE</div>
+          <div className="flyer-note">Good<br />Spaces<br />Brighter<br />Days<br /><b>♡</b></div>
+        </div>
       </section>
 
       <section className="flyer-services" aria-label="PrimeTouch cleaning services">
