@@ -31,7 +31,15 @@ export default function Home() {
   return (
     <main className="flyer-site">
       <section className="flyer-hero flyer-hero-art">
-        <img src={heroArtwork} alt="PrimeTouch cleaning team working in a bright home" />
+        <img
+          src={heroArtwork}
+          alt="PrimeTouch cleaning team working in a bright home"
+          width="1024"
+          height="1024"
+          sizes="100vw"
+          fetchPriority="high"
+          decoding="async"
+        />
       </section>
 
       <section className="flyer-services" aria-label="PrimeTouch cleaning services">
