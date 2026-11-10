@@ -10,7 +10,7 @@ header nav a{padding:9px 0;color:#173b2d;border-bottom:2px solid transparent;whi
 header nav a:hover,header nav a.on{color:#9b7623;border-color:#bd9637}
 header .btn{flex:none;padding:13px 21px;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
 header .menu{color:#073b2c}
-.flyer-hero{min-height:640px;display:grid;grid-template-columns:50% 50%;position:relative;background:#fffdf9}
+.flyer-hero{min-height:0;display:block;position:relative;background:#fffdf9}.flyer-hero-art{width:100%;line-height:0;text-align:center}.flyer-hero-art img{display:block;width:100%;height:auto;object-fit:contain;object-position:center;margin:0 auto}
 .flyer-copy{padding:20px 2% 25px 3.5%;position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
 .flyer-logo{display:block;width:min(100%,440px);height:auto;object-fit:contain;object-position:left center;clip-path:inset(2px 0 0 0)}
 .flyer-motto{width:98%;box-sizing:border-box;padding:0;display:flex;align-items:center;justify-content:flex-start;gap:12px;font-size:clamp(9px,1vw,13px);letter-spacing:.31em;color:#1a201b;margin:3px 0 26px 2%}.flyer-motto span{flex:1;max-width:60px;height:2px;background:var(--poster-gold)}

@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
 import QuoteButton from '../components/QuoteButton.jsx'
 import { EMAIL, EMAIL_LABEL, PHONE, PHONE_LABEL } from '../data/site.js'
-import logo from '../assets/brand-logo.png'
-import livingRoom from '../assets/flyer-living-room.jpg'
 import residential from '../assets/flyer-residential.jpg'
 import commercial from '../assets/flyer-commercial.jpg'
 import deep from '../assets/flyer-deep-clean.jpg'
@@ -10,6 +8,7 @@ import tenancy from '../assets/flyer-tenancy.jpg'
 import moving from '../assets/flyer-moving.jpg'
 import lawnSnow from '../assets/flyer-lawn-snow.jpg'
 import leaves from '../assets/flyer-leaves.jpg'
+import heroArtwork from '../assets/primetouch-home-hero.jpeg'
 
 const services = [
   { label: 'Residential Cleaning', title: <>Residential<br />Cleaning</>, image: residential, icon: '⌂' },
@@ -31,19 +30,8 @@ const promises = [
 export default function Home() {
   return (
     <main className="flyer-site">
-      <section className="flyer-hero">
-        <div className="flyer-copy">
-          <img className="flyer-logo" src={logo} alt="PrimeTouch Cleaning & Home Services Ltd." />
-          <div className="flyer-motto"><span /> CLEANER SPACES · HAPPIER LIVES <span /></div>
-          <h1>A CLEANER<br />BRIGHTER<br />HEALTHIER<br /><em>TOMORROW</em></h1>
-          <p className="flyer-script">Let Us Do<br />the Dirty Work! <b>♡</b></p>
-        </div>
-        <div className="flyer-room">
-          <img className="flyer-room-photo" src={livingRoom} alt="Bright living room with a clean sofa and fresh flowers" />
-          <div className="flyer-trusted">Your<br />Trusted Local<br />Cleaning Experts<span /></div>
-          <div className="flyer-residential">RESIDENTIAL&nbsp; | &nbsp;COMMERCIAL<br />AND MORE</div>
-          <div className="flyer-note">Good<br />Spaces<br />Brighter<br />Days<br /><b>♡</b></div>
-        </div>
+      <section className="flyer-hero flyer-hero-art">
+        <img src={heroArtwork} alt="PrimeTouch cleaning team working in a bright home" />
       </section>
 
       <section className="flyer-services" aria-label="PrimeTouch cleaning services">
